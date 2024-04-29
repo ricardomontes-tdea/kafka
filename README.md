@@ -15,3 +15,7 @@ https://github.com/confluentinc/schema-registry?tab=readme-ov-file#quickstart-ap
   const version = 1; // topic version, verify on schema-registry server
   const subject = '[TOPIC - SUBJECT]';
 ```
+
+- run `node app.js` to turn up express server and send message through /send_messages endpoint
+- run `node consumer` to turn up consumer listener and fetch data from kafka topic
+- run `node consumerObservable` tp turn up consumer listener based on Rxjs observable, it is moew cleaner to implement
