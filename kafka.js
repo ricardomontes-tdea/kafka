@@ -1,5 +1,6 @@
 const { Kafka } = require('kafkajs');
 const { SchemaRegistry } = require('@kafkajs/confluent-schema-registry')  
+const { Observable } = require('rxjs');
 
 const username = '';
 const password = '';
@@ -64,7 +65,6 @@ const readMessageFromTopic = async (topic, callback) => {
     }
   })
 }
-
 
 module.exports = {
   findSchemaBySubjectAndVersion,

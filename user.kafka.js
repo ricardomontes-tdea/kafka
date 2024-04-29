@@ -18,7 +18,7 @@ const writeUserInfoToKafka = async (payload) => {
 
 const readMessages = () => {
   readMessageFromTopic(topic, (data) => {
-    console.log('Data comming from kafka --> ', data);
+    console.log('[readMessage()] Data comming from kafka --> ', data);
   })
 }
 

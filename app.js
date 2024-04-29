@@ -1,18 +1,16 @@
 const express = require('express');
-const { writeUserInfoToKafka, readMessages } = require('./user.kafka');
+const { writeUserInfoToKafka } = require('./user.kafka');
 const app = express();
 
 const APP_PORT = 5000
 
 app.use(express.json());
 
-readMessages();
-
 app.get('/send_message', async (req, res) => {
 
-  await writeUserInfoToKafka({ email: 'rina@plata.com', isNew: true, message: "No te duermas" })
+  await writeUserInfoToKafka({ email: 'mayerli@giraldo.com', isNew: true, message: "Mayer lies" })
 
-  res.send('Hello there!');
+  res.send('Sending message to kafka');
 });
 
 app.listen(APP_PORT, () => {
